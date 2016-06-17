@@ -41,13 +41,33 @@ This makes it possible to use different trackers for each series.
 
 Example
 -------
+.. image:: AreaSeries_2sets.png
 
 .. sourcecode:: csharp
 
-    var model = new PlotModel { Title = "AreaSeries" };
-    var areaSeries = new AreaSeries());
-    ...
-    model.Series.Add(areaSeries);
+    PlotModel model = new PlotModel { Title = "Area Sample" };
+
+    var series1 = new AreaSeries { Title = "Green Zone" };
+
+    //high boundary
+    series1.Points.Add(new DataPoint(0.0, 6.0));
+    series1.Points.Add(new DataPoint(1.4, 2.1));
+    series1.Points.Add(new DataPoint(2.0, 4.2));
+    series1.Points.Add(new DataPoint(3.3, 2.3));
+    series1.Points.Add(new DataPoint(4.7, 7.4));
+    series1.Points.Add(new DataPoint(6.0, 6.2));
+    series1.Points.Add(new DataPoint(8.0, 8.9));
+
+    //low boundary
+    series1.Points2.Add(new DataPoint(0.0, 4.0));
+    series1.Points2.Add(new DataPoint(1.0, 1.1));
+    series1.Points2.Add(new DataPoint(2.0, 3.2));
+    series1.Points2.Add(new DataPoint(3.0, 1.3));
+    series1.Points2.Add(new DataPoint(4.0, 3.4));
+    series1.Points2.Add(new DataPoint(6.0, 5.2));
+    series1.Points2.Add(new DataPoint(7.0, 3.9));
+
+    model.Series.Add(series1);
 
 .. _tracker: ../tracker
 .. _MSDN: http://msdn.microsoft.com/en-us/library/system.string.format(v=vs.110).aspx
