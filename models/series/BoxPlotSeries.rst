@@ -46,4 +46,14 @@ Example
 
 .. sourcecode:: csharp
 
-    var model = new PlotModel { Title = "BoxPlotSeries" };
+    PlotModel model = new PlotModel { Title = "Box Plot Sample" };
+
+    var s1 = new BoxPlotSeries { Title = "series 1" };
+
+    s1.Items.Add(new BoxPlotItem(0, 740, 850, 945, 980, 1070, new[] { 650.0 }));
+    s1.Items.Add(new BoxPlotItem(1, 750, 805, 845, 890, 970, new double[] { }));
+    s1.Items.Add(new BoxPlotItem(2, 845, 847, 855, 880, 910, new[] { 640.0, 950, 970 }));
+    s1.Items.Add(new BoxPlotItem(3, 720, 760, 820, 870, 910, new double[] { }));
+    s1.Items.Add(new BoxPlotItem(4, 730, 805, 807, 870, 950, new double[] { }));
+
+    model.Series.Add(s1);
